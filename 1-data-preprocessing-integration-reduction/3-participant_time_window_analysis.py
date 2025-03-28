@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 participant_directory = "../data/participant-division"
 time_window_sizes = []
 
+
 def get_minimal_time_window_size(data_frame):
     unique_counts = {
         column: data_frame[column].nunique()
@@ -62,7 +63,6 @@ def process_data(data_frame, cognitive_load):
         interval_rows = data_frame[(data_frame["time"] >= start_time) & (data_frame["time"] < end_time)]
 
         mean_values = interval_rows.mean()
-
 
         new_row = pd.DataFrame({
             "ID": [mean_values["participant_id"]],
